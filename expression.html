@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>峥嵘聚合_动态表情</title>
+	<meta name="keywords" content="免费阅读,钱塘阅读,小说,在线小说,阅读器,电子书,手机看书,移动阅读,搜小说,网络小说,原创网文,看书神器,网文,热门小说,追书,书城,热门小说,免费小说,免费书城,android版,ios版,ipad版"> 
+	<meta name="description" content="新生代的的移动读书软件，同时支持Android与iOS平台，支持在线/离线阅读海量原创网络文学"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+	<meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Disposition" content="attachment;">
+    <link href="./static/css/swiper-3.4.2.min.css" rel="stylesheet">
+    <link href="./static/css/reset.css" rel="stylesheet">
+    <link href="./static/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="./static/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="./static/js/func.js"></script>
+</head>
+<style>
+    .caselist{
+        position: relative;
+        overflow: hidden;
+        border: #C0E5F7 5px solid;
+        border-radius: 15px;
+    }
+    .tagImg1{
+        position: absolute;
+    }
+    .tagDiv1{
+        position: absolute;
+        z-index: 2;
+        top:350px;
+    }
+	.war{
+		font-style:italic;
+		width: 25px;
+		height: 100px;
+		line-height: 25px;
+		font-size: 14px;
+		text-align: center;
+		color: black;
+		/*background-color: #9ad3f0;*/
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		border-radius:5px;
+		letter-spacing: 2px;
+		}
+		.float_li{
+			position: relative;
+		}
+    .black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 2000px; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+        } 
+        .white_content { 
+            display: none; 
+            position: absolute; 
+            border-radius:10px;
+            top: 75%; 
+            left: 35%; 
+            width: 30%; 
+            height: 50%; 
+            padding: 40px; 
+            background-color: white; 
+            z-index:1002; 
+            overflow: auto; 
+        } 
+</style>
+<body>
+    <div class="header">
+        <div class="content">
+            <a href="index.html"><img src="./static/images/logo.png" alt="" class="logo"></a>
+            <p class="prompt">&nbsp;&nbsp;</p>
+            <ul class="right">
+                <li><a href="index.html">首页</a></li>
+                <!-- <li><a href="comic.html">漫画</a></li> -->
+                <li class="hover"><a href="expression.html">动态表情</a></li>
+				<li><a href="news.html">行业资讯</a></li>
+                <li><a href="aboutus.html">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="login noLogin" style="display:none">           
+            <a class="loginout" href="./login.html">登录</a>/
+            <a class="loginout" href="./register.html">注册</a>
+        </div>
+        <div class="login showLogin" style="display:none">           
+            <a class="loginout" onclick="quitLogin()" href="javascript:;">退出登录</a>
+        </div>
+
+    </div>
+    <img src="./static/images/bg2.jpg" style="width:100%;" />
+    <div style="width:100%;background: #f9f9f9;overflow: hidden;">
+        <div class="only-expression" style="width:1160px;margin:0px auto;padding:24px;">
+        </div>
+        <div class="all-expression_title" style="width:1160px;margin:0px auto;padding:24px;">
+            <div id="light" class="white_content">
+                <img style="margin-left: 20% " src="./static/images/ttak_index.png"><br />
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+                    <font color="red" style="margin-left: 40%">关闭窗口</font>
+                </a>
+            </div>
+            <div id="fade" class="black_overlay"></div>
+            <img src="./static/images/bqb_title.png" width="100%" style="margin:30px auto;margin-left:-10px;" />
+        </div>
+        <div class="all-expression" style="width:1160px;margin:0px auto;padding:24px;">
+            
+        </div>
+    </div>
+    <div class="footer">
+        <div class="bottom"></div>
+    </div>
+    <script src="./static/js/expression.js?v=20190228"></script>
+    <script src="./static/js/common.js"></script>
+    <!-- <script src="./static/js/login.js"></script> -->
+    <!-- <div class="isLogin hidden">
+        <div class="close" id="closeLogin">X</div>
+        <div class="com-login verify-form com-login-width rel"><h1 class="f32 mt30 pl12">您好，请登录</h1>
+            <form method="post" class="mt30">
+                <div class="show-placeholder">请输入手机号码</div>
+                <div class="hang name-w">
+                    <input type="text" name="name" id="telephone" placeholder="请输入手机号" class="names f16" maxlength="11">
+                </div>
+                <div class="show-placeholder">请输入短信验证码</div>
+                <div class="hang row-sms cl">
+                    <input type="text" placeholder="请输入短信验证码" id="smsCode" class="fl f16">
+                    <button type="button" class="btn-flat f14 fr but-bg" id="toCaptcha">短信验证码</button>
+                    <button type="button" class="btn-flat disable fr" id="showCount">0s后重发</button>
+                </div>
+                <div class="error cp-pumpkin mt5 animated  opa0"><p></p></div>
+                <button type="button" id="loginRequest" class="submit btn-flat mt5 f17 cf but-bg">登 录</button>
+            </form>
+            <div class="user-agreement">
+                <a href="agreement.html" target="_blank">用户服务协议</a>
+            </div>
+
+            <div class="footer cl mt10 hide">
+            </div>
+        </div>
+    </div> -->
+</body>
+
+</html>
