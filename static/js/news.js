@@ -86,7 +86,8 @@ function setNews(){
         
         var liShow = '<div class="news-item down_btn_a" data-id="'+item.id+'" data-fee="'+item.fee+'">'+
             '<a href="javascript:void(0)">'+
-				'<p>'+item.title+'<span>'+ item.create_time +'</span></p>'+
+				'<p>'+item.title+'<span>付费阅读：'+ item.fee +'元/篇</span></p>'+
+            	// '<p>'+item.title+'<span>'+ item.create_time +'</span></p>'+
 				// '<p>'+item.title+'<i>[支付'+ item.fee +'元查看详情]</i><span>'+ item.create_time +'</span></p>'+
             '</a>'+
         '</div>';
