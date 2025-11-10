@@ -4,8 +4,13 @@ var usphone = '18612149479';
 var usaddress = '北京市丰台区航丰路8号院1号楼6层627室';
 var beian = '京ICP备189600615号-1';
 var uscompany = '北京三五更文化传媒有限公司';
+var beian_mps = '11018502057805';
+var beian_mps_text = '京公网安备11018502057805号';
+
 var isLogin = localStorage.getItem('isLogin') && localStorage.getItem('isLogin') == 1;
 // Copyright © 2020-2021　北京三五更文化传媒有限公司 版权所有 京ICP备189600615号-1 地址：北京市丰台区航丰路8号院1号楼6层627室
+// <a href="https://beian.mps.gov.cn/#/guery/webSearch?code=11010502057805" rel="noreferrer' target="blank">京公网安备11010502057805号</a>
+
 $(function(){
     createFooter();
     if(isLogin){
@@ -36,7 +41,9 @@ function createFooter(){
     var currentYear = new Date().getFullYear();
     var _foot = '<p>联系邮箱：'+ usemail +'&nbsp;&nbsp;联系QQ：'+ usqq +'&nbsp;&nbsp;联系电话：'+ usphone +'</p>'+
         '<p>联系地址：'+ usaddress +'&nbsp;&nbsp;©'+currentYear+'&nbsp;&nbsp;'+ uscompany +' 版权所有 </p>'+
-        '<p><a href="https://beian.miit.gov.cn/" target="_blank">'+ beian +'</a></p>';
+        '<p><a href="https://beian.miit.gov.cn/" target="_blank">'+ beian +'</a></p>'+
+        '<p><image src="./static/images/beian_mps.png" alt="京公网安备" width="16" height="16" style="vertical-align: middle;"/><a href="https://beian.mps.gov.cn/#/guery/webSearch?code='+ beian_mps +'" target="_blank">'+ beian_mps_text +'</a></p>';
+        
         // &nbsp;&nbsp;<a href="/static/images/papers/business_license.jpg" target="_blank">网络文化经营许可证 京网文（2021）0372-110号</a>
     $('.footer .bottom').append(_foot);
 }
